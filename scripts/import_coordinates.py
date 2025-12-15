@@ -76,14 +76,11 @@ def import_data():
 
                 # 데이터베이스에 삽입
                 cursor.execute("""
-                    INSERT OR IGNORE INTO coordinates (nx, ny, province, city, town)
+                    INSERT INTO coordinates (nx, ny, province, city, town)
                     VALUES (?, ?, ?, ?, ?)
                 """, (nx, ny, province, city, town))
 
-                if cursor.rowcount > 0:
-                    inserted_count += 1
-                else:
-                    skipped_count += 1
+                inserted_count += 1
 
                 # 진행상황 출력 (100건마다)
                 if (idx + 1) % 100 == 0:

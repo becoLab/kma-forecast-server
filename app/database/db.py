@@ -27,8 +27,7 @@ def init_database():
             ny INTEGER NOT NULL,
             province TEXT,
             city TEXT,
-            town TEXT,
-            UNIQUE(nx, ny)
+            town TEXT
         )
     """)
 
